@@ -30,7 +30,4 @@ def convert_currency(from_currency: str, to_currency: str, amount: float) -> flo
     exchanged_value = exchange_rate * amount
     return exchanged_value	
 
-
-#print(convert_currency('INR','AED',100))
-#print('hi')
-#print(get_currencies())
+print(get_currencies())
