@@ -1,6 +1,6 @@
 import json
 import requests
-from decouple import config
+from decouple import *
 
 
 def get_currencies()->list:
