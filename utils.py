@@ -30,4 +30,4 @@ def convert_currency(from_currency: str, to_currency: str, amount: float) -> flo
     exchanged_value = exchange_rate * amount
     return exchanged_value	
 
-print(get_currencies())
+#print(get_currencies())
