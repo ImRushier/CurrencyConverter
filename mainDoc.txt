@@ -1,0 +1,38 @@
+Python script that creates a graphical user interface (GUI) for a currency converter application using the Tkinter library.
+
+1. Importing Required Libraries:
+   - `tkinter`: The standard Python library for creating GUI applications.
+   - `PIL`: The Python Imaging Library, used to work with images in various formats.
+   - `ImageTk`: A module from the PIL library that provides support for displaying images in Tkinter.
+
+2. Window Configuration:
+   - `window`: It creates the main application window using the `Tk()` class from Tkinter.
+   - The window is set to a specific size (300x320 pixels), titled "Currency Converter," and configured with a white background color.
+   - The window is set to be non-resizable in both height and width.
+
+3. Creating Frames:
+   - Two frames are created to organize the layout of the GUI: `top_frame` and `main_frame`.
+   - `top_frame` is positioned at the top of the window and has a blue background color.
+   - `main_frame` is positioned below `top_frame` and has a white background color.
+
+4. Top Frame Widgets:
+   - An image file named `icon.png` is opened using PIL, resized to 40x40 pixels, and converted to `icon_image` using `ImageTk.PhotoImage()`.
+   - An `app_name_label` is created using the `Label` class from Tkinter. It displays the icon image on the left, text "Currency Converter," and has a blue background, white foreground, and specific font settings.
+
+5. Main Frame Widgets:
+   - `result_label`: A label to display the converted amount. It initially contains an empty string, has a width of 15 characters, and uses a specific font.
+   - `from_label` and `to_label`: Labels indicating the "From" and "To" currencies.
+   - `from_combo` and `to_combo`: Comboboxes (dropdown menus) to select the "From" and "To" currencies. The available options are populated by calling the `get_currencies()` function.
+   - `amount_entry`: An entry field where the user can input the amount to convert.
+   - `convert_button`: A button labeled "Convert" that triggers the `convert()` function when clicked.
+
+6. `convert()` Function:
+   - This function is called when the "Convert" button is clicked.
+   - It retrieves the amount, "From" currency, and "To" currency from the respective widgets.
+   - The `convert_currency()` function (imported from `utils.py`) is called to perform the currency conversion.
+   - The result is displayed in the `result_label` widget.
+
+7. Event Loop:
+   - The `window.mainloop()` method starts the event loop, which continuously listens for events (such as button clicks) and updates the GUI accordingly.
+
+It's worth mentioning that some parts of the code, such as `get_currencies()` and `convert_currency()` functions, are not present in the code you provided but are expected to be defined in a separate module named `utils.py`. These functions are responsible for retrieving currency data and performing currency conversion, respectively.
