@@ -1,0 +1,27 @@
+Python script that retrieves currency exchange rates using an API and performs currency conversion.
+
+1. Importing Required Libraries:
+   - `json`: A built-in Python library used to handle JSON data.
+   - `requests`: A popular library for making HTTP requests and handling responses.
+   - `decouple`: A library used for handling configuration variables from a `.env` file.
+
+2. Defining the `get_currencies` Function:
+   - This function reads a JSON file named `currency.json` that contains currency data.
+   - It iterates over each currency entry in the file and extracts the currency code.
+   - The currency codes are added to the `currency_codes` list.
+   - The function returns a sorted list of currency codes.
+
+3. Setting API Configuration:
+   - `API_KEY`: It retrieves the API key from the environment using the `config` function from `decouple`. If the key is not found in the environment, it falls back to a default value.
+   - `API_ENDPOINT`: It represents the URL of the API endpoint that will be used to retrieve currency exchange rates.
+
+4. Defining the `convert_currency` Function:
+   - This function takes three parameters: `from_currency` (the currency to convert from), `to_currency` (the currency to convert to), and `amount` (the value to be converted).
+   - It constructs a dictionary named `query_params` that contains the API key, the base currency, and the target currency.
+   - The function sends an HTTP GET request to the API endpoint with the query parameters.
+   - The response is received and converted to JSON format using the `.json()` method.
+   - The exchange rate is extracted from the JSON response by accessing the appropriate nested dictionary.
+   - The exchanged value is calculated by multiplying the exchange rate with the amount provided.
+   - The function returns the exchanged value.
+
+It's worth mentioning that the code assumes the presence of a file named `currency.json` in the same directory, which contains the necessary currency data. Additionally, the API key is expected to be stored in an environment variable named `API_KEY`, either through an `.env` file or directly in the environment.
